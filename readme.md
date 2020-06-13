@@ -1,9 +1,24 @@
-# download [![Build Status](https://travis-ci.org/kevva/download.svg?branch=master)](https://travis-ci.org/kevva/download)
+# downloadex
 
 > Download and extract files
 
 *See [download-cli](https://github.com/kevva/download-cli) for the command-line version.*
 
+This is a drop-in replacement for the original [download](https://github.com/kevva/download), which many projects depend on to download binary files or third-party source code.
+
+The problem for the original version is that it always tries to download the resources, without cache, and not able to use mirrors. This is terrible when used in slow / poor network environments, e.g. in China.
+
+With this replacement, you can easily rewrite the URLs before downloading, by creating an `.downloadrc` file in your home directory. See [Rewriting](#Rewriting) for more details.
+
+If you are using yarn, simply adding this to your `package.json` will work:
+
+```json
+{
+	"resolutions": {
+		"download": "downloadex"
+	}
+}
+```
 
 ## Install
 
