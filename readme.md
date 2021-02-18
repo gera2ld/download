@@ -12,11 +12,15 @@ With this replacement, you can easily rewrite the URLs before downloading, by cr
 
 If you are using yarn, simply adding this to your `package.json` will work:
 
-```json
+```js
 {
-	"resolutions": {
-		"download": "downloadex"
-	}
+  "resolutions": {
+    // one of:
+    "download": "https://registry.npm.taobao.org/downloadex/download/downloadex-8.0.1.tgz",
+    "download": "https://registry.npmjs.org/downloadex/-/downloadex-8.0.1.tgz",
+    "download": "gera2ld/download#19ae2067", // commit hash can be cached
+    "download": "gera2ld/download#v8.0.1", // tag will be fetched every time on install
+  }
 }
 ```
 
