@@ -16,10 +16,10 @@ If you are using yarn, simply adding this to your `package.json` will work:
 {
   "resolutions": {
     // one of:
-    "download": "https://registry.npm.taobao.org/downloadex/download/downloadex-8.0.1.tgz",
-    "download": "https://registry.npmjs.org/downloadex/-/downloadex-8.0.1.tgz",
-    "download": "gera2ld/download#19ae2067", // commit hash can be cached
-    "download": "gera2ld/download#v8.0.1", // tag will be fetched every time on install
+    "download": "https://registry.npmjs.org/downloadex/-/downloadex-8.0.3.tgz", // recommended for universal usage
+    "download": "https://registry.npm.taobao.org/downloadex/download/downloadex-8.0.3.tgz",
+    "download": "gera2ld/download#fb65cb5c", // commit hash can be cached
+    "download": "gera2ld/download#v8.0.3", // tag will be fetched every time on install
   }
 }
 ```
@@ -27,7 +27,7 @@ If you are using yarn, simply adding this to your `package.json` will work:
 ## Install
 
 ```
-$ npm install download
+$ npm install downloadex
 ```
 
 
@@ -35,7 +35,7 @@ $ npm install download
 
 ```js
 const fs = require('fs');
-const download = require('download');
+const download = require('downloadex');
 
 (async () => {
 	await download('http://unicorn.com/foo.jpg', 'dist');
