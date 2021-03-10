@@ -16,10 +16,9 @@ If you are using yarn, simply adding this to your `package.json` will work:
 {
   "resolutions": {
     // one of:
-    "download": "https://registry.npmjs.org/downloadex/-/downloadex-8.0.3.tgz", // recommended for universal usage
-    "download": "https://registry.npm.taobao.org/downloadex/download/downloadex-8.0.3.tgz",
-    "download": "gera2ld/download#fb65cb5c", // commit hash can be cached
-    "download": "gera2ld/download#v8.0.3", // tag will be fetched every time on install
+    "download": "https://registry.npmjs.org/downloadex/-/downloadex-8.1.0.tgz", // recommended for universal usage
+    "download": "https://registry.npm.taobao.org/downloadex/download/downloadex-8.1.0.tgz",
+    "download": "gera2ld/download#v8.1.0", // tag will be fetched every time on install
   }
 }
 ```
