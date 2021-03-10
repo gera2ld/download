@@ -72,8 +72,10 @@ module.exports = (uri, output, opts) => {
 	}, opts);
 
 	if (config && config.rewrite) {
-		for (const [match, replace] of Object.entries(config.rewrite)) {
-			if (typeof match === 'string') {
+		if (typeof config.rewrite === 'function') {
+			uri = config.rewrite(uri) || uri;
+		} else {
+			for (const [match, replace] of Object.entries(config.rewrite)) {
 				if (uri.startsWith(match)) {
 					uri = replace + uri.slice(match.length);
 					break;
