@@ -71,7 +71,19 @@ Create a `.downloadrc` in you home directory or somewhere else that can be searc
 }
 ```
 
-Only prefixes will be matched for now.
+By using a JavaScript config file `.downloadrc.js` instead of a JSON one, you can also provide `rewrite` as a function. For example, rewriting GitHub URLs to jsdelivr:
+
+```js
+module.exports = {
+  rewrite(uri) {
+    const matches = uri.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+\/[^/]+)\/([^/]+)\/(.*)$/);
+    if (matches) {
+      const [, repo, tag, path] = matches;
+      return `https://cdn.jsdelivr.net/gh/${repo}@${tag}/${path}`;
+    }
+  },
+};
+```
 
 ## API
 
